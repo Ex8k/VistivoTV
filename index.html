@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; media-src http: https: blob:; connect-src http: https:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 
     <title>Immich TV</title>
 
@@ -52,6 +54,8 @@
         </button>
 
         <div id="loginStatus"></div>
+
+        <div id="securityNotice" class="securityNotice hidden"></div>
 
     </div>
 
@@ -145,6 +149,20 @@
     <img id="viewerImage">
 
     <video id="viewerVideo" preload="metadata" playsinline></video>
+
+    <div id="videoControls" class="videoControls hidden">
+        <div id="videoProgress" class="videoProgress"><div id="videoProgressFill"></div></div>
+        <div class="videoControlRow">
+            <span id="videoCurrentTime">0:00</span>
+            <div class="transportButtons">
+                <button class="transportButton rewindButton" data-video-action="rewind" aria-label="Rewind 10 seconds"><i></i></button>
+                <button class="transportButton playButton" data-video-action="toggle" aria-label="Play"><i></i></button>
+                <button class="transportButton stopButton" data-video-action="stop" aria-label="Stop"><i></i></button>
+                <button class="transportButton forwardButton" data-video-action="forward" aria-label="Forward 10 seconds"><i></i></button>
+            </div>
+            <span id="videoDuration">0:00</span>
+        </div>
+    </div>
 
     <div id="viewerInfo">
 
@@ -276,6 +294,12 @@
                 Sign out
             </button>
 
+            <button
+                id="removeProfileButton"
+                class="dangerButton">
+                Remove profile from this TV
+            </button>
+
         </div>
 
     </div>
@@ -289,7 +313,37 @@
 
 <div id="errorBox" class="hidden"></div>
 
+<div id="networkOverlay" class="systemOverlay hidden">
+    <div class="systemDialog">
+        <h1>No network connection</h1>
+        <p>Reconnect the TV to the network, then try again.</p>
+        <button id="networkRetryButton">RETRY</button>
+    </div>
+</div>
 
+<div id="exitOverlay" class="systemOverlay hidden">
+    <div class="systemDialog">
+        <h1>Exit Immich TV?</h1>
+        <div class="dialogActions">
+            <button id="exitNoButton">NO</button>
+            <button id="exitYesButton">YES</button>
+        </div>
+    </div>
+</div>
+
+<div id="accountConfirmOverlay" class="systemOverlay hidden">
+    <div class="systemDialog">
+        <h1 id="accountConfirmTitle"></h1>
+        <p id="accountConfirmText"></p>
+        <div class="dialogActions">
+            <button id="accountConfirmNoButton">NO</button>
+            <button id="accountConfirmYesButton" class="confirmDangerButton">YES</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
 <script src="js/main.js"></script>
 
 </body>

@@ -206,7 +206,9 @@ On first launch, enter:
 
 After authentication, the password is not stored by ImmichTV. The server address, profile details, settings, and Immich session token are stored in the application's Tizen local storage so the user does not need to sign in after every restart.
 
-For better security, use HTTPS whenever possible. When plain HTTP is used, login credentials and session tokens are not protected against interception on the local network.
+For better security, use HTTPS whenever possible. When plain HTTP is used, login credentials and session tokens are not protected against interception on the local network. ImmichTV displays a warning and requires an additional confirmation before signing in over HTTP.
+
+Saved profiles can be removed from the TV in Settings. Removing a profile deletes its locally stored session and requests server-side logout when the server is reachable. Session tokens are not passwords, but they grant access to the corresponding Immich account and must be treated as private data.
 
 Additional users can be added from the profile picker. When two or more profiles exist, the active profile can also be changed by selecting the user name in the gallery header.
 
@@ -218,7 +220,7 @@ Additional users can be added from the profile picker. When two or more profiles
 - Enter: Open the selected asset
 - Up from the first row: Focus the top bar
 - Left/Right in the top bar: Select the profile switcher or settings
-- Back: Return or exit
+- Back: Return to the previous area; from the home screen, open exit confirmation
 
 ### Photo viewer
 
@@ -228,9 +230,10 @@ Additional users can be added from the profile picker. When two or more profiles
 
 ### Video viewer
 
-- Enter: Play or pause
-- Left/Right: Seek backward or forward by 10 seconds
+- Left/Right: Select an on-screen playback control
+- Enter: Activate the selected playback control
 - Up/Down: Previous or next asset
+- Play/Pause, Play, Pause, Stop, Rewind, and Fast Forward: Control playback directly when supported by the remote
 - Back: Return to the gallery
 
 ## Troubleshooting

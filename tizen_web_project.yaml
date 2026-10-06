@@ -9,7 +9,7 @@ api_version: "8.0"
 build_type: Debug
 
 # Output name for application
-output_name: ImmichTV
+output_name: VistivoTV
 
 # Output path for build
 output_path: ""

@@ -9,7 +9,7 @@ The project is currently developed and tested with:
 - Immich v3.1.0
 - Tizen Studio on Windows
 
-ImmichTV is a third-party project and is not affiliated with or endorsed by Immich or Samsung.
+Vistivo TV is a third-party project and is not affiliated with or endorsed by Immich or Samsung.
 
 ## Features
 
@@ -68,7 +68,7 @@ This repository contains a **Tizen Web application**, not a Tizen .NET applicati
 2. Open Extensions and search for **Tizen TV**.
 3. Install the extension published by **Samsung TV SDK** (`samsungtvsdk`).
 4. Make sure its required base **Tizen** extension is also installed. Current versions normally install this dependency automatically.
-5. Open the ImmichTV project directory in Visual Studio Code.
+5. Open the VistivoTV project directory in Visual Studio Code.
 6. Open the Tizen extension's **Packages** view and install/update the latest compatible TV extension if requested.
 
 The available commands can be found in the Command Palette by entering `Tizen` or `Tizen TV`. Depending on the extension version, they include project build, signed package build, device connection, application installation, and launch commands.
@@ -139,7 +139,7 @@ Do not commit certificate files, password files, `profiles.xml`, or signed packa
 
 ```powershell
 git clone <REPOSITORY_URL>
-cd ImmichTV
+cd VistivoTV
 ```
 
 The project does not contain a default Immich address or email address. They are entered on the TV during the first login.
@@ -165,6 +165,7 @@ Run the following commands from the repository root. Replace the paths and certi
 ```powershell
 & '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat' build-web -- .
 & '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat' package -t wgt -s '<CERTIFICATE_PROFILE>' -- '.buildResult'
+Copy-Item '.buildResult\Vistivo TV.wgt' '.buildResult\VistivoTV.wgt'
 ```
 
 If the CLI asks for the author and distributor certificate passwords, enter them in the terminal. Typed password characters are intentionally not displayed.
@@ -181,7 +182,7 @@ Install the signed package:
 
 ```powershell
 & '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat' install `
-  -n ImmichTV.wgt `
+  -n VistivoTV.wgt `
   -s '<TV_IP>:26101' `
   -- '.buildResult'
 ```
@@ -190,13 +191,13 @@ Launch the application using the application ID from `config.xml`:
 
 ```powershell
 & '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat' run `
-  -p 'Ldpj5lV8v1.ImmichTV' `
+  -p 'Ldpj5lV8v1.VistivoTV' `
   -s '<TV_IP>:26101'
 ```
 
 Installing a newer build with the same application ID and author certificate updates the existing application. An update normally preserves the saved Immich profiles and sessions. Uninstalling the application deletes its local application data.
 
-## 9. Configure ImmichTV
+## 9. Configure Vistivo TV
 
 On first launch, enter:
 
@@ -204,9 +205,9 @@ On first launch, enter:
 - **Email:** Immich account email
 - **Password:** Immich account password
 
-After authentication, the password is not stored by ImmichTV. The server address, profile details, settings, and Immich session token are stored in the application's Tizen local storage so the user does not need to sign in after every restart.
+After authentication, the password is not stored by Vistivo TV. The server address, profile details, settings, and Immich session token are stored in the application's Tizen local storage so the user does not need to sign in after every restart.
 
-For better security, use HTTPS whenever possible. When plain HTTP is used, login credentials and session tokens are not protected against interception on the local network. ImmichTV displays a warning and requires an additional confirmation before signing in over HTTP.
+For better security, use HTTPS whenever possible. When plain HTTP is used, login credentials and session tokens are not protected against interception on the local network. Vistivo TV displays a warning and requires an additional confirmation before signing in over HTTP.
 
 Saved profiles can be removed from the TV in Settings. Removing a profile deletes its locally stored session and requests server-side logout when the server is reachable. Session tokens are not passwords, but they grant access to the corresponding Immich account and must be treated as private data.
 
@@ -272,7 +273,7 @@ The browser, simulator, emulator, and physical TV can use different web-engine v
 ## Project structure
 
 ```text
-ImmichTV/
+VistivoTV/
 ├── config.xml              Tizen application manifest
 ├── index.html              Application screens and controls
 ├── icon.png                Application icon

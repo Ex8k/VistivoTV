@@ -1,8 +1,8 @@
 (function () {
 "use strict";
 
-var STORE={server:"immichtv_server",token:"immichtv_token",user:"immichtv_user",columns:"immichtv_columns",slideshow:"immichtv_slideshow",profiles:"immichtv_profiles",activeProfile:"immichtv_active_profile",schema:"immichtv_storage_schema"};
-var STORAGE_SCHEMA=2;
+var STORE={server:"vistivotv_server",token:"vistivotv_token",user:"vistivotv_user",columns:"vistivotv_columns",slideshow:"vistivotv_slideshow",profiles:"vistivotv_profiles",activeProfile:"vistivotv_active_profile",schema:"vistivotv_storage_schema"};
+var STORAGE_SCHEMA=3;
 var S={server:norm(localStorage.getItem(STORE.server)||""),token:localStorage.getItem(STORE.token)||"",user:null,columns:num(localStorage.getItem(STORE.columns),4,8,6),slide:num(localStorage.getItem(STORE.slideshow),3,15,5),profiles:[],activeProfileId:localStorage.getItem(STORE.activeProfile)||"",profileIndex:0,addingProfile:false,loginFromProfiles:false,previousProfileId:"",profileCanReturn:false,screen:"boot",zone:"grid",topIndex:1,selected:0,buckets:[],bucket:0,rail:0,assets:[],galleryRun:0,viewerRun:0,viewerUrl:null,viewer:false,viewerType:"",slideTimer:null,loading:false,settingsIndex:0,retry:false,insecureApprovedFor:"",networkBlocked:false,exitOpen:false,exitChoice:0,accountConfirmOpen:false,accountConfirmChoice:0,accountConfirmAction:"",videoControl:1};
 try{S.user=JSON.parse(localStorage.getItem(STORE.user)||"null");}catch(ignore){}
 

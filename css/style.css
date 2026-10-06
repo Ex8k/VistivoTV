@@ -83,6 +83,14 @@ button {
     margin-bottom: 8px;
 }
 
+.loginBrandBanner {
+    display: block;
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    margin: 0 auto 18px;
+}
+
 .loginLogo span,
 .brand span {
     color: #999;
@@ -286,6 +294,12 @@ button {
     font-weight: bold;
 }
 
+.brandBanner {
+    display: block;
+    width: 330px;
+    height: auto;
+}
+
 .brandIcon {
     width: 58px;
     height: 58px;
@@ -338,6 +352,14 @@ button {
     color: white;
 
     font-size: 27px;
+}
+
+.iconButton svg {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    fill: currentColor;
 }
 
 .iconButton:focus {

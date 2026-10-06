@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; media-src http: https: blob:; connect-src http: https:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 
-    <title>Immich TV</title>
+    <title>Vistivo TV</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,9 +21,7 @@
 
     <div class="loginBox">
 
-        <div class="loginLogo">
-            IMMICH <span>TV</span>
-        </div>
+        <img class="loginBrandBanner" src="images/vistivo-banner.png" alt="Vistivo TV">
 
         <div class="loginSubtitle">
             Sign in to your Immich server
@@ -69,7 +67,7 @@
 <div id="profileScreen" class="screen hidden">
 
     <div class="profilePanel">
-        <div class="loginLogo">IMMICH <span>TV</span></div>
+        <img class="loginBrandBanner" src="images/vistivo-banner.png" alt="Vistivo TV">
         <div class="loginSubtitle">Who is watching?</div>
         <div id="profileList"></div>
         <div class="profileHint">Use Left/Right and press Enter</div>
@@ -87,8 +85,7 @@
     <header id="topBar">
 
         <div class="brand">
-            <img class="brandIcon" src="icon.png" alt="">
-            IMMICH <span>TV</span>
+            <img class="brandBanner" src="images/vistivo-banner.png" alt="Vistivo TV">
         </div>
 
         <div class="topRight">
@@ -97,8 +94,11 @@
 
             <button
                 id="settingsButton"
-                class="iconButton">
-                ⚙
+                class="iconButton"
+                aria-label="Settings">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 0 0 .12-.64l-2-3.46a.5.5 0 0 0-.61-.22l-2.49 1a7.3 7.3 0 0 0-1.69-.98l-.38-2.65A.49.49 0 0 0 14 2h-4a.49.49 0 0 0-.49.42l-.38 2.65c-.61.25-1.18.59-1.69.98l-2.49-1a.49.49 0 0 0-.61.22l-2 3.46a.5.5 0 0 0 .12.64l2.11 1.65c-.04.32-.07.66-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 0 0-.12.64l2 3.46c.12.22.38.3.61.22l2.49-1c.51.4 1.08.73 1.69.98l.38 2.65c.04.24.24.42.49.42h4c.25 0 .45-.18.49-.42l.38-2.65c.61-.25 1.18-.58 1.69-.98l2.49 1c.23.08.49 0 .61-.22l2-3.46a.5.5 0 0 0-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+                </svg>
             </button>
 
         </div>
@@ -323,7 +323,7 @@
 
 <div id="exitOverlay" class="systemOverlay hidden">
     <div class="systemDialog">
-        <h1>Exit Immich TV?</h1>
+        <h1>Exit Vistivo TV?</h1>
         <div class="dialogActions">
             <button id="exitNoButton">NO</button>
             <button id="exitYesButton">YES</button>

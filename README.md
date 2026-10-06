@@ -1,6 +1,6 @@
-# ImmichTV
+# Vistivo TV
 
-ImmichTV is an unofficial, remote-control-first Samsung Tizen TV client for [Immich](https://immich.app/). It is built as a Tizen Web application using HTML, CSS, and JavaScript.
+Vistivo TV is an unofficial, remote-control-first Samsung Tizen TV client for [Immich](https://immich.app/). It is built as a Tizen Web application using HTML, CSS, and JavaScript.
 
 The project is currently developed and tested with:
 

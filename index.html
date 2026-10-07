@@ -48,7 +48,7 @@
             autocomplete="current-password">
 
         <button id="loginButton">
-            SIGN IN
+            Sign in
         </button>
 
         <div id="loginStatus"></div>
@@ -86,12 +86,10 @@
 
         <div class="brand">
             <img class="brandBanner" src="images/vistivo-banner.png" alt="Vistivo TV">
+            <button id="userName" type="button"></button>
         </div>
 
         <div class="topRight">
-
-            <button id="userName" type="button"></button>
-
             <button
                 id="settingsButton"
                 class="iconButton"
@@ -302,6 +300,32 @@
 
         </div>
 
+        <div class="settingSection aboutSection">
+
+            <h2>About</h2>
+
+            <div class="settingRow">
+                <div>Version</div>
+                <div id="appVersion" class="settingValue">—</div>
+            </div>
+
+            <div class="settingRow">
+                <div>Project and support</div>
+                <div class="settingText">github.com/Ex8k/VistivoTV</div>
+            </div>
+
+            <div class="aboutDisclaimer">
+                Unofficial Immich client. Not affiliated with or endorsed by Immich or Samsung.
+            </div>
+
+            <button
+                id="privacyPolicyButton"
+                class="secondaryButton">
+                Privacy policy
+            </button>
+
+        </div>
+
     </div>
 
 </div>
@@ -317,7 +341,7 @@
     <div class="systemDialog">
         <h1>No network connection</h1>
         <p>Reconnect the TV to the network, then try again.</p>
-        <button id="networkRetryButton">RETRY</button>
+        <button id="networkRetryButton">Try again</button>
     </div>
 </div>
 
@@ -325,8 +349,8 @@
     <div class="systemDialog">
         <h1>Exit Vistivo TV?</h1>
         <div class="dialogActions">
-            <button id="exitNoButton">NO</button>
-            <button id="exitYesButton">YES</button>
+            <button id="exitNoButton">Cancel</button>
+            <button id="exitYesButton">Exit</button>
         </div>
     </div>
 </div>
@@ -336,9 +360,32 @@
         <h1 id="accountConfirmTitle"></h1>
         <p id="accountConfirmText"></p>
         <div class="dialogActions">
-            <button id="accountConfirmNoButton">NO</button>
-            <button id="accountConfirmYesButton" class="confirmDangerButton">YES</button>
+            <button id="accountConfirmNoButton">Cancel</button>
+            <button id="accountConfirmYesButton" class="confirmDangerButton">Confirm</button>
         </div>
+    </div>
+</div>
+
+<div id="privacyOverlay" class="systemOverlay hidden">
+    <div class="systemDialog privacyDialog">
+        <h1>Privacy policy</h1>
+        <div class="privacyContent">
+            <h2>Data stored on this TV</h2>
+            <p>Vistivo TV stores your Immich server address, profile name and email, session token, and application preferences in the TV application storage. Your Immich password is not stored after sign-in.</p>
+
+            <h2>How data is used</h2>
+            <p>The data is used only to connect directly to the Immich server you select and display your library. Vistivo TV has no advertising, analytics, tracking, or developer-operated cloud service.</p>
+
+            <h2>Security</h2>
+            <p>An Immich session token grants access to your account. HTTPS is strongly recommended. With plain HTTP, credentials, tokens, photos, and videos are not encrypted in transit. Authenticated video URLs may be recorded in logs controlled by your Immich server or reverse proxy.</p>
+
+            <h2>Deleting data</h2>
+            <p>Remove a saved profile in Settings, clear the application data, or uninstall Vistivo TV. Removing a TV profile does not delete your Immich account or media.</p>
+
+            <h2>Support</h2>
+            <p>github.com/Ex8k/VistivoTV</p>
+        </div>
+        <button id="privacyCloseButton">Close</button>
     </div>
 </div>
 

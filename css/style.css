@@ -713,9 +713,13 @@ button {
 .settingsPanel {
     width: 850px;
 
-    max-height: 850px;
+    max-height: calc(100vh - 80px);
 
     padding: 40px 45px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
 
     background: #1a1a1f;
 
@@ -1102,4 +1106,556 @@ button {
     border-radius: 8px;
 
     font-size: 21px;
+}
+
+
+/* ============================================================
+   VISTIVO DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+    --bg: #061126;
+    --bg-deep: #030816;
+    --surface: #0d1c38;
+    --surface-raised: #14294b;
+    --surface-hover: #1a345d;
+    --line: rgba(100, 171, 255, .22);
+    --text: #f5f8ff;
+    --muted: #9fafd0;
+    --cyan: #19d2ff;
+    --blue: #1478ff;
+    --purple: #794dff;
+    --pink: #ed328d;
+    --orange: #ff8528;
+    --danger: #ff526d;
+    --focus-ring: 0 0 0 4px var(--cyan), 0 0 24px rgba(80, 92, 255, .78);
+    --panel-shadow: 0 24px 70px rgba(0, 3, 15, .58);
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+}
+
+html,
+body {
+    background: #000;
+    color: var(--text);
+}
+
+button,
+input,
+select {
+    color: var(--text);
+}
+
+#loginScreen,
+#profileScreen {
+    background: #000;
+}
+
+.loginBox {
+    background: linear-gradient(145deg, rgba(20, 41, 75, .97), rgba(8, 24, 51, .97));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--panel-shadow), inset 0 1px rgba(255, 255, 255, .05);
+}
+
+.loginBrandBanner {
+    filter: drop-shadow(0 12px 28px rgba(18, 84, 255, .20));
+}
+
+.loginSubtitle,
+.profileHint,
+.loginBox label {
+    color: var(--muted);
+}
+
+.loginBox input {
+    background: rgba(7, 20, 43, .92);
+    border-color: rgba(123, 174, 255, .20);
+    border-radius: var(--radius-sm);
+}
+
+.loginBox input:focus {
+    border-color: var(--cyan);
+    box-shadow: var(--focus-ring);
+}
+
+#loginButton {
+    border-radius: var(--radius-sm);
+    background: linear-gradient(110deg, var(--blue), var(--purple));
+    color: white;
+    box-shadow: 0 12px 28px rgba(35, 83, 255, .34);
+}
+
+#loginButton:focus {
+    outline: none;
+    box-shadow: var(--focus-ring), 0 15px 30px rgba(35, 83, 255, .38);
+    transform: scale(1.015);
+}
+
+.securityNotice {
+    border-color: rgba(255, 187, 58, .72);
+    border-radius: var(--radius-sm);
+    background: rgba(73, 45, 12, .82);
+    color: #ffe1a2;
+}
+
+.profilePanel {
+    padding: 44px;
+}
+
+.profileCard {
+    border-width: 3px;
+    border-color: rgba(108, 162, 255, .16);
+    border-radius: var(--radius-md);
+    background: linear-gradient(145deg, var(--surface-raised), var(--surface));
+    box-shadow: 0 18px 45px rgba(0, 3, 15, .34);
+}
+
+.profileCard.focused {
+    border-color: var(--cyan);
+    box-shadow: var(--focus-ring), 0 20px 44px rgba(0, 5, 25, .55);
+    transform: scale(1.045);
+}
+
+.profileAvatar {
+    background: linear-gradient(135deg, var(--cyan), var(--blue) 45%, var(--purple));
+    box-shadow: 0 10px 25px rgba(20, 120, 255, .34);
+}
+
+.profileEmail {
+    color: var(--muted);
+}
+
+#topBar {
+    background: #000;
+    border-bottom: 0;
+    box-shadow: none;
+}
+
+.brand {
+    gap: 24px;
+}
+
+.brandBanner {
+    width: 330px;
+    filter: drop-shadow(0 7px 18px rgba(20, 120, 255, .22));
+}
+
+#userName {
+    border-color: rgba(102, 168, 255, .18);
+    background: rgba(20, 41, 75, .60);
+    color: var(--muted);
+}
+
+#userName.profileSwitchAvailable {
+    color: var(--text);
+}
+
+#userName.profileSwitchAvailable::after {
+    color: var(--cyan);
+}
+
+#userName.remoteFocused,
+.iconButton:focus,
+.iconButton.remoteFocused {
+    border-color: var(--cyan);
+    outline: none;
+    box-shadow: var(--focus-ring);
+    transform: scale(1.055);
+}
+
+.iconButton {
+    border-color: rgba(102, 168, 255, .18);
+    background: linear-gradient(145deg, var(--surface-raised), var(--surface));
+}
+
+#galleryArea {
+    background: #000;
+}
+
+#galleryContainer {
+    padding-top: 30px;
+}
+
+.asset {
+    background: var(--surface);
+    border-color: rgba(92, 155, 255, .14);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 3, 15, .28);
+}
+
+.asset.focused {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 2px var(--cyan), 0 0 25px rgba(75, 78, 255, .72);
+    transform: scale(1.035);
+}
+
+.videoBadge {
+    border: 1px solid rgba(25, 210, 255, .50);
+    background: linear-gradient(145deg, rgba(20, 120, 255, .90), rgba(121, 77, 255, .88));
+    box-shadow: 0 7px 18px rgba(0, 5, 25, .45);
+}
+
+.assetDate {
+    background: linear-gradient(transparent, rgba(3, 8, 22, .92));
+}
+
+#loadingMore {
+    color: var(--muted);
+}
+
+#loadingMore::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 12px;
+    border: 3px solid rgba(25, 210, 255, .25);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    vertical-align: -3px;
+}
+
+#dateRail {
+    width: 215px;
+    background: #000;
+    border-left: 0;
+}
+
+.railTitle {
+    color: var(--cyan);
+}
+
+.railYear {
+    color: #dce9ff;
+}
+
+.railMonth {
+    position: relative;
+    color: var(--muted);
+    border-radius: var(--radius-sm);
+}
+
+.railMonth span {
+    color: #7186aa;
+}
+
+.railMonth.current {
+    color: var(--text);
+    background: rgba(20, 120, 255, .10);
+}
+
+.railMonth.current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    border-radius: 3px;
+    background: var(--cyan);
+}
+
+.railMonth.focused {
+    color: white;
+    background: linear-gradient(110deg, #183757, #302b50);
+    box-shadow: 0 0 0 2px rgba(74, 159, 190, .52), 0 0 12px rgba(48, 64, 130, .28);
+}
+
+.railMonth.focused span {
+    color: white;
+}
+
+#viewerInfo {
+    background: linear-gradient(transparent, rgba(3, 11, 28, .92));
+}
+
+#viewerSlideshow {
+    border: 1px solid rgba(25, 210, 255, .28);
+    border-radius: 22px;
+    background: rgba(7, 22, 48, .86);
+    color: #dce9ff;
+    box-shadow: 0 10px 28px rgba(0, 3, 15, .38);
+}
+
+.overlay,
+.systemOverlay {
+    background: rgba(0, 0, 0, .90);
+}
+
+.settingsPanel,
+.systemDialog {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(20, 41, 75, .99), rgba(7, 22, 47, .99));
+    box-shadow: var(--panel-shadow), inset 0 1px rgba(255, 255, 255, .05);
+}
+
+.settingsHeader h1,
+.systemDialog h1 {
+    color: var(--text);
+}
+
+.settingSection {
+    border-top-color: var(--line);
+}
+
+.settingSection h2 {
+    color: var(--cyan);
+    letter-spacing: 1px;
+}
+
+.aboutSection {
+    margin-top: 28px;
+}
+
+.settingValue {
+    min-width: 110px;
+    padding: 9px 16px;
+    border: 1px solid rgba(101, 165, 255, .22);
+    border-radius: 20px;
+    background: rgba(4, 15, 34, .55);
+    color: var(--muted);
+    text-align: center;
+}
+
+.settingText {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 19px;
+    text-align: right;
+}
+
+.aboutDisclaimer {
+    margin: 18px 0;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.privacyDialog {
+    width: 1040px;
+    max-height: 820px;
+    padding: 38px 46px;
+}
+
+.privacyContent {
+    max-height: 610px;
+    margin-bottom: 26px;
+    padding-right: 18px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.privacyContent h2 {
+    margin: 22px 0 8px;
+    color: var(--cyan);
+    font-size: 23px;
+}
+
+.privacyContent h2:first-child {
+    margin-top: 0;
+}
+
+.privacyContent p {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.privacyDialog > button {
+    display: block;
+    margin: 0 auto;
+}
+
+.optionGroup {
+    padding: 5px;
+    border: 1px solid rgba(95, 157, 255, .18);
+    border-radius: 13px;
+    background: rgba(4, 15, 34, .72);
+}
+
+.optionGroup button,
+.secondaryButton,
+.systemDialog button {
+    border-color: transparent;
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+}
+
+.optionGroup button.selected {
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: white;
+    box-shadow: 0 7px 18px rgba(42, 72, 255, .36);
+}
+
+.optionGroup button:focus,
+.secondaryButton:focus,
+.dangerButton:focus,
+.systemDialog button.remoteFocused {
+    border-color: var(--cyan);
+    outline: none;
+    box-shadow: var(--focus-ring);
+    transform: scale(1.045);
+}
+
+#slideshowInterval {
+    min-width: 190px;
+    border-color: rgba(101, 165, 255, .30);
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+}
+
+#slideshowInterval:focus {
+    border-color: var(--cyan);
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.secondaryButton {
+    background: linear-gradient(145deg, #1a3a69, #12294c);
+}
+
+.dangerButton,
+.confirmDangerButton {
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, #c82954, var(--danger)) !important;
+    box-shadow: 0 8px 20px rgba(255, 50, 90, .20);
+}
+
+.systemDialog p {
+    color: var(--muted);
+}
+
+.videoControls {
+    border: 1px solid rgba(25, 210, 255, .24);
+    border-radius: 20px;
+    background: rgba(6, 17, 38, .94);
+    box-shadow: 0 20px 55px rgba(0, 3, 15, .65);
+}
+
+.videoProgress {
+    height: 9px;
+    background: #243a5d;
+}
+
+#videoProgressFill {
+    background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
+    box-shadow: 0 0 12px rgba(25, 210, 255, .50);
+}
+
+.videoControlRow span {
+    color: #dce9ff;
+}
+
+.transportButtons {
+    gap: 10px;
+    padding: 8px;
+    border-color: rgba(87, 153, 255, .18);
+    border-radius: 16px;
+    background: rgba(4, 14, 33, .72);
+    box-shadow: none;
+}
+
+.transportButton,
+.transportButton.playButton {
+    border-color: rgba(104, 169, 255, .20);
+    border-radius: 13px;
+    background: linear-gradient(145deg, var(--surface-raised), var(--surface));
+    box-shadow: 0 8px 20px rgba(0, 3, 15, .34);
+}
+
+.transportButton.playButton {
+    border-color: rgba(25, 210, 255, .40);
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+}
+
+.transportButton.remoteFocused {
+    border-color: var(--cyan);
+    outline: none;
+    background: linear-gradient(135deg, #198eff, #8055ff);
+    box-shadow: var(--focus-ring);
+    transform: scale(1.06);
+}
+
+.transportButton.playButton i {
+    left: 50%;
+    top: 50%;
+    transform: translate(-36%, -50%);
+}
+
+.transportButton.playButton[data-playing="true"] i {
+    left: calc(50% - 10px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.transportButton.stopButton i {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.transportButton.rewindButton i {
+    left: calc(50% + 7px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.transportButton.forwardButton i {
+    left: calc(50% - 7px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.transportButton.rewindButton i,
+.transportButton.forwardButton i {
+    left: 50%;
+    top: 50%;
+    width: 24px;
+    height: 18px;
+    border: 0;
+    background: transparent;
+}
+
+.transportButton.forwardButton i {
+    transform: translate(-50%, -50%);
+}
+
+.transportButton.rewindButton i {
+    transform: translate(-50%, -50%) scaleX(-1);
+}
+
+.transportButton.rewindButton i::before,
+.transportButton.rewindButton i::after,
+.transportButton.forwardButton i::before,
+.transportButton.forwardButton i::after {
+    top: 0;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 12px solid #eee;
+    border-right: 0;
+}
+
+.transportButton.rewindButton i::before,
+.transportButton.forwardButton i::before {
+    left: 0;
+}
+
+.transportButton.rewindButton i::after,
+.transportButton.forwardButton i::after {
+    left: 10px;
+}
+
+#errorBox {
+    border: 1px solid rgba(255, 110, 133, .70);
+    border-left: 8px solid var(--danger);
+    border-radius: var(--radius-sm);
+    background: rgba(80, 14, 35, .96);
+    box-shadow: 0 16px 40px rgba(0, 3, 15, .55);
 }

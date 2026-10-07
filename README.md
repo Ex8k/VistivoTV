@@ -11,6 +11,8 @@ The project is currently developed and tested with:
 
 Vistivo TV is a third-party project and is not affiliated with or endorsed by Immich or Samsung.
 
+See the [Vistivo TV Privacy Policy](PRIVACY.md) for details about locally stored profiles, session tokens, network security, and data deletion.
+
 ## Features
 
 - Standard Immich email and password authentication

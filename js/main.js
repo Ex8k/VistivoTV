@@ -225,7 +225,7 @@ document.addEventListener("keydown",function(event){
  if(key===37){moveGrid(-1,0);}else if(key===39){moveGrid(1,0);}else if(key===38){moveGrid(0,-1);}else if(key===40){moveGrid(0,1);}else if(key===13){openViewer(S.selected);}else if(key===10009){confirmExit();}
 });
 function exit(){setScreenSaver(true);try{tizen.application.getCurrentApplication().exit();}catch(e){console.log(e);}}
-function showAppVersion(){try{E.appVersion.textContent=tizen.application.getCurrentApplication().appInfo.version;}catch(ignore){E.appVersion.textContent="1.3.13";}}
+function showAppVersion(){try{E.appVersion.textContent=tizen.application.getCurrentApplication().appInfo.version;}catch(ignore){E.appVersion.textContent="1.3.17";}}
 function start(){showAppVersion();E.server.value=S.server;loadProfiles();if(S.profiles.length){var profile=activeProfile()||S.profiles[0];applyProfile(profile);applyColumns();settingsUI();if(S.profiles.length>1){showProfiles(false);return;}}else{applyColumns();settingsUI();}if(!S.token){showLogin();return;}validate().then(startGallery).catch(function(e){if(e.status===401){clearSession();E.email.value=(activeProfile()&&activeProfile().email)||E.email.value;showLogin("Your saved session expired.");}else{showLogin("Immich is temporarily unavailable. Your saved session was kept.",true);}});}
 registerRemoteKeys();start();checkNetwork();
 })();

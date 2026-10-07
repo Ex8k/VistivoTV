@@ -1276,6 +1276,25 @@ select {
 
 #galleryContainer {
     padding-top: 30px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(45, 185, 255, .72) rgba(8, 22, 46, .78);
+}
+
+#galleryContainer::-webkit-scrollbar {
+    display: block;
+    width: 11px;
+}
+
+#galleryContainer::-webkit-scrollbar-track {
+    background: rgba(8, 22, 46, .78);
+    border-radius: 8px;
+}
+
+#galleryContainer::-webkit-scrollbar-thumb {
+    min-height: 48px;
+    border: 2px solid rgba(8, 22, 46, .78);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(61, 219, 255, .82), rgba(65, 102, 255, .72));
 }
 
 .asset {
@@ -1321,6 +1340,29 @@ select {
     width: 215px;
     background: #000;
     border-left: 0;
+}
+
+#dateRailItems {
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(45, 185, 255, .68) rgba(8, 22, 46, .72);
+}
+
+#dateRailItems::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+}
+
+#dateRailItems::-webkit-scrollbar-track {
+    background: rgba(8, 22, 46, .72);
+    border-radius: 7px;
+}
+
+#dateRailItems::-webkit-scrollbar-thumb {
+    min-height: 38px;
+    border: 1px solid rgba(8, 22, 46, .72);
+    border-radius: 7px;
+    background: linear-gradient(180deg, rgba(61, 219, 255, .78), rgba(65, 102, 255, .68));
 }
 
 .railTitle {

@@ -13,6 +13,8 @@ Vistivo TV is a third-party project and is not affiliated with or endorsed by Im
 
 See the [Vistivo TV Privacy Policy](PRIVACY.md) for details about locally stored profiles, session tokens, network security, and data deletion.
 
+The source code is available under the [MIT License](LICENSE).
+
 ## Features
 
 - Standard Immich email and password authentication
@@ -148,6 +150,30 @@ The project does not contain a default Immich address or email address. They are
 
 ## 7. Build and package
 
+### Recommended clean release build
+
+Use the repository release script for distributable packages. It creates a new staging directory containing only the runtime allowlist, builds and signs it, then verifies that the WGT contains no source-control data, debug output, documentation, or stale build files.
+
+```powershell
+.\scripts\Build-Release.ps1
+```
+
+The active Tizen certificate profile is used by default. A specific profile or CLI location can be supplied when needed:
+
+```powershell
+.\scripts\Build-Release.ps1 `
+  -SigningProfile '<CERTIFICATE_PROFILE>' `
+  -TizenCli '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat'
+```
+
+The validated package is written to `.release\output\VistivoTV-<version>.wgt`. Never package the repository root or reuse an existing `.buildResult` directory for a store release.
+
+An existing signed package can be checked separately:
+
+```powershell
+.\scripts\Test-ReleasePackage.ps1 -PackagePath '<PACKAGE_PATH>'
+```
+
 ### Tizen Studio
 
 1. Select **File > Import > Tizen > Tizen Project**.
@@ -162,12 +188,11 @@ Open the Command Palette and run the Tizen TV signed-package build command. The 
 
 ### Command line
 
-Run the following commands from the repository root. Replace the paths and certificate profile name with values from your installation.
+For development-only builds, the raw CLI commands are shown below. Store releases should use `scripts\Build-Release.ps1` so stale files cannot enter the package.
 
 ```powershell
 & '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat' build-web -- .
 & '<TIZEN_STUDIO>\tools\ide\bin\tizen.bat' package -t wgt -s '<CERTIFICATE_PROFILE>' -- '.buildResult'
-Copy-Item '.buildResult\Vistivo TV.wgt' '.buildResult\VistivoTV.wgt'
 ```
 
 If the CLI asks for the author and distributor certificate passwords, enter them in the terminal. Typed password characters are intentionally not displayed.
@@ -281,7 +306,9 @@ VistivoTV/
 ├── icon.png                Application icon
 ├── css/style.css           TV interface styling
 ├── js/main.js              Authentication, profiles, API and navigation
-└── images/                 Additional application images
+├── images/                 Additional application images
+├── scripts/                Clean release build and package validation
+└── STORE_SUBMISSION.md      Samsung Seller Office preparation notes
 ```
 
 Generated build directories, signed packages, certificates, and local secrets must remain excluded from Git.

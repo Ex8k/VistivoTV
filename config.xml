@@ -2,7 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:tizen="http://tizen.org/ns/widgets"
         id="urn:vistivo:tv"
-        version="1.3.17"
+        version="1.3.18"
         viewmodes="maximized">
 
     <name>Vistivo TV</name>

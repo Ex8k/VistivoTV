@@ -68,7 +68,8 @@ Vistivo TV — неофіційний клієнт Immich для Samsung Smart T
 - `scripts/Test-ReleasePackage.ps1` — перевірка складу WGT.
 - `README.md` — інструкції розробки, підписання й запуску.
 - `STORE_SUBMISSION.md` — metadata та чекліст Seller Office. Розділ “Store assets still required” застарів: assets уже створені.
-- `PRIVACY.md` — публічна privacy policy.
+- `PRIVACY.md` — публічна privacy policy англійською.
+- `PRIVACY_KO.md` — корейський переклад для обов'язкового поля `URL of Privacy Policy in Korean` у Samsung Seller Office. Після публікації в `main` використовувати URL `https://github.com/Ex8k/VistivoTV/blob/main/PRIVACY_KO.md`.
 
 ## 6. Release package
 
